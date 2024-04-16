@@ -1,0 +1,10 @@
+---
+import Layout from './Layout.astro'
+import Title from '../components/Title.astro'
+
+const { frontmatter: { title, description } } = Astro.props
+---
+
+<Layout title={title} description={description}>
+  <Title>{title}</Title>
+</Layout>
