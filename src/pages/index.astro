@@ -1,8 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import Header from "../components/Header.astro"
 import Title from "../components/Title.astro"
+import Nav from "../components/Nav.astro"
+import Footer from "../components/Footer.astro"
 ---
 
 <Layout title="Douglas Moore" description="Portfolio for Douglas Moore">
-  <Title>Coming soon...</Title>
+  <Header slot="header">
+    <Title>Douglas Moore</Title>
+    <Nav />
+  </Header>
+  <main class="flex flex-1 justify-center">
+    <slot>
+      <p>Portfolio coming soon...</p>
+    </slot>
+  </main>
+  <Footer slot="footer" />
 </Layout>
