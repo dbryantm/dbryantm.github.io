@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content"
+import BlogLayout from "../../../../../layouts/BlogLayout.astro"
+import Header from "../../../../../components/Header.astro"
+import Title from "../../../../../components/Title.astro"
+import Nav from "../../../../../components/Nav.astro"
+import Footer from "../../../../../components/Footer.astro"
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog")
+  return posts.map((post) => ({
+    params: { slug: `/portfolio/${post.slug}` },
+    props: { post: post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await post.render()
+---
+
+<BlogLayout title="Douglas Moore" description="Blog for Douglas Moore">
+  <Header slot="header">
+    <Title>Douglas Moore</Title>
+    <Nav />
+  </Header>
+  <main class="flex flex-1">
+    <Content />
+  </main>
+  <Footer slot="footer" />
+</BlogLayout>

@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "../layouts/BlogLayout.astro"
+import Header from "../components/Header.astro"
+import Title from "../components/Title.astro"
+import Nav from "../components/Nav.astro"
+import Footer from "../components/Footer.astro"
+import { type Blog } from "../schemas/blog"
+
+const posts = await getCollection("blog")
+---
+
+<Layout title="Douglas Moore" description="Blog for Douglas Moore">
+  <Header slot="header">
+    <Title>Douglas Moore</Title>
+    <Nav />
+  </Header>
+  <main class="flex flex-1 justify-center">
+    <p>Blog coming soon...</p>
+    <!-- {
+      posts.map((post) => (
+        <div>
+          <a href={`/portfolio/blog/${post.slug}`}>{post.data.title}</a>
+          <p>{post.data.description}</p>
+        </div>
+      ))
+    } -->
+  </main>
+  <Footer slot="footer" />
+</Layout>
