@@ -17,14 +17,14 @@ const posts: Blog[] = await getCollection('blog')
   </Header>
   <main class="flex flex-1 justify-center">
     <p>Blog coming soon...</p>
-    {
+    <!-- {
       posts.map((post) => (
         <div>
           <a href={`/portfolio/blog/${post.slug}`}>{post.data.title}</a>
           <p>{post.data.description}</p>
         </div>
       ))
-    }
+    } -->
   </main>
   <Footer slot="footer" />
 </Layout>
