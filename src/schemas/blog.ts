@@ -8,4 +8,8 @@ export const blogSchema = z.object({
   image: z.string().optional(),
 })
 
-export type Blog = z.infer<typeof blogSchema>
+export type Blog = {
+  id: string
+  slug: string
+  data: z.infer<typeof blogSchema>
+}
