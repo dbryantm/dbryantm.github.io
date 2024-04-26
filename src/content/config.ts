@@ -1,10 +1,10 @@
 // 1. Import utilities from `astro:content`
-import { z, defineCollection } from "astro:content"
-import { blogSchema } from "../schemas/blog"
+import { defineCollection } from 'astro:content'
+import { blogSchema } from '../schemas/blog'
 
 // 2. Define your collection(s)
 const blogCollection = defineCollection({
-  type: "content",
+  type: 'content',
   schema: blogSchema,
 })
 
