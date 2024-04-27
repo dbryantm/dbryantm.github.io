@@ -1,16 +1,33 @@
 import astro from 'eslint-plugin-astro'
-import vue from 'eslint-plugin-vue'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
 import prettier from 'eslint-config-prettier'
 
 export default [
-  prettier,
   ...astro.configs['flat/recommended'],
-  ...vue.configs['flat/recommended'],
   {
+    files: ['**/*.{tsx}'],
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+    },
     rules: {
-      'vue/html-self-closing': 'off',
-      'vue/max-attributes-per-line': 'off',
-      'vue/multi-word-component-names': 'off',
+      ...react.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules,
+      ...reactHooks.configs.recommended.rules,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
+  prettier,
 ]

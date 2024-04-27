@@ -1,18 +1,23 @@
 import { defineConfig } from 'astro/config'
-import vue from '@astrojs/vue'
+import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
 import mdx from '@astrojs/mdx'
-// import viteEslint from 'vite-plugin-eslint'
+import viteEslint from 'vite-plugin-eslint'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dbryantm.github.io',
   base: '/portfolio',
-  integrations: [vue(), tailwind(), mdx()],
+  integrations: [react(), tailwind(), mdx()],
   server: {
     port: 8000,
   },
   vite: {
-    // plugins: [viteEslint()], // needs to not run on build
+    plugins: [
+      {
+        ...viteEslint(),
+        apply: 'serve',
+      },
+    ],
   },
 })

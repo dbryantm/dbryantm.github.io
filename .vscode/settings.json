@@ -9,5 +9,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.documentSelectors": ["**/*.astro"],
-  "stylelint.validate": ["html", "astro", "vue"]
+  "stylelint.validate": ["html", "astro"]
 }
