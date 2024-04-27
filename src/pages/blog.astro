@@ -20,7 +20,7 @@ const posts: Blog[] = await getCollection('blog')
     <!-- {
       posts.map((post) => (
         <div>
-          <a href={`/portfolio/blog/${post.slug}`}>{post.data.title}</a>
+          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
           <p>{post.data.description}</p>
         </div>
       ))

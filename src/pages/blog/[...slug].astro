@@ -9,7 +9,7 @@ import Footer from '../../components/Footer.astro'
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
   return posts.map((post) => ({
-    params: { slug: `/portfolio/${post.slug}` },
+    params: { slug: post.slug },
     props: { post },
   }))
 }
