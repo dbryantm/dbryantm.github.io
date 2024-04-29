@@ -28,9 +28,11 @@ const { title, description } = Astro.props
         <Nav />
       </Header>
     </slot>
-    <main>
+
+    <main class="flex min-h-[80vh] flex-1 flex-col items-center">
       <slot />
     </main>
+
     <slot name="footer">
       <Footer />
     </slot>

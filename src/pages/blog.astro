@@ -15,16 +15,16 @@ const posts: Blog[] = await getCollection('blog')
     <Title>Douglas Moore</Title>
     <Nav />
   </Header>
-  <main class="flex flex-1 justify-center">
-    <p>Blog coming soon...</p>
-    <!-- {
-      posts.map((post) => (
-        <div>
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-          <p>{post.data.description}</p>
-        </div>
-      ))
-    } -->
-  </main>
+
+  <p>Blog coming soon...</p>
+  <!-- {
+    posts.map((post) => (
+      <div>
+        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+        <p>{post.data.description}</p>
+      </div>
+    ))
+  } -->
+
   <Footer slot="footer" />
 </Layout>
